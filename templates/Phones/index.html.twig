@@ -1,0 +1,42 @@
+{%extends'base.html.twig'%}
+
+{% block title %}Symfony  {%endblock %}
+
+{% block body %}
+
+    {% if Phones %}
+        <table id="Phones" class="table table-striped">
+        <thead>
+            <tr>
+                <th> Phone Make </th>
+                <th> Phone Model </th>
+                <th> Phone Years </th>
+                <th> Phone IMEI </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for Phone in Phones %}
+            <tr>
+                <td>{{ Phone.PhoneMake }}</td>
+                <td>{{ Phone.PhoneModel }}</td>
+                <td>{{ Phone.PhoneYears }}</td>
+                <td>{{ Phone.PhoneIMEI }}</td>
+                <td>
+                 <a href="/Phone/{{ Phone.id }}" class="btn btn-dark">Show</a>
+                 <a href="/Phone/edit/{{ Phone.id }}" class="btn btn-light">Edit</a>
+                 <a href="#" class="btn btn-danger delete-Phone" data-id="{{ Phone.id }}">Delete</a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        <p>No Phones to display</p>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}

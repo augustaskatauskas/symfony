@@ -1,0 +1,13 @@
+{%extends'base.html.twig'%}
+
+{% block title %}{{ Car.CarMake }} {%endblock %}
+
+{% block body %}
+
+<h1> Make: {{  Car.CarMake }}</h1>
+<h1> Model: {{ Car.CarModel }}</h1>
+<h1> Years: {{ Car.CarYears }}</h1>
+<h1> Numbers: {{ Car.CarNumbers }}</h1>
+<hr>
+<a href="/Car">Go back</a>
+{% endblock %}

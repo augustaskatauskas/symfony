@@ -1,0 +1,42 @@
+{%extends'base.html.twig'%}
+
+{% block title %}Symfony  {%endblock %}
+
+{% block body %}
+
+    {% if Computers %}
+        <table id="Computers" class="table table-striped">
+        <thead>
+            <tr>
+                <th> Computer Make </th>
+                <th> Computer Model </th>
+                <th> Computer Years </th>
+             
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for Computer in Computers %}
+            <tr>
+                <td>{{ Computer.ComputerMake }}</td>
+                <td>{{ Computer.ComputerModel }}</td>
+                <td>{{ Computer.ComputerYears }}</td>
+              
+                <td>
+                 <a href="/Computer/{{ Computer.id }}" class="btn btn-dark">Show</a>
+                 <a href="/Computer/edit/{{ Computer.id }}" class="btn btn-light">Edit</a>
+                 <a href="#" class="btn btn-danger delete-Computer" data-id="{{ Computer.id }}">Delete</a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        <p>No Computers to display</p>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}

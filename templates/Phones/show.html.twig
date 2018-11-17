@@ -1,0 +1,13 @@
+{%extends'base.html.twig'%}
+
+{% block title %}{{ Phone.PhoneMake }} {%endblock %}
+
+{% block body %}
+
+<h1> Make: {{ Phone.PhoneMake }}</h1>
+<h1> Model: {{ Phone.PhoneModel }}</h1>
+<h1> Years: {{ Phone.PhoneYears }}</h1>
+<h1> IMEI: {{ Phone.PhoneIMEI }}</h1>
+<hr>
+<a href="/Phone">Go back</a>
+{% endblock %}

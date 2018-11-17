@@ -1,0 +1,42 @@
+{%extends'base.html.twig'%}
+
+{% block title %}Symfony  {%endblock %}
+
+{% block body %}
+
+    {% if Cars %}
+        <table id="Cars" class="table table-striped">
+        <thead>
+            <tr>
+                <th> Cars Make </th>
+                <th> Cars Model </th>
+                <th> Cars Years </th>
+                <th> Cars Numbers </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for Car in Cars %}
+            <tr>
+                <td>{{ Car.CarMake }}</td>
+                <td>{{ Car.CarModel }}</td>
+                <td>{{ Car.CarYears }}</td>
+                <td>{{ Car.CarNumbers }}</td>
+                <td>
+                 <a href="/Car/{{ Car.id }}" class="btn btn-dark">Show</a>
+                 <a href="/Car/edit/{{ Car.id }}" class="btn btn-light">Edit</a>
+                 <a href="#" class="btn btn-danger delete-Car" data-id="{{ Car.id }}">Delete</a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        <p>No Cars to display</p>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{%extends'base.html.twig'%}
+
+{% block title %}{{ Computer.ComputerMake }} {%endblock %}
+
+{% block body %}
+
+<h1> Make: {{ Computer.ComputerMake }}</h1>
+<h1> Model: {{ Computer.ComputerModel }}</h1>
+<h1> Years: {{ Computer.ComputerYears }}</h1>
+<hr>
+<a href="/Computer">Go back</a>
+{% endblock %}

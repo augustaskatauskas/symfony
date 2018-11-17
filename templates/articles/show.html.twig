@@ -1,0 +1,17 @@
+{%extends'base.html.twig'%}
+
+{% block title %}{{ article.EmployeeFirstName }} {%endblock %}
+
+{% block body %}
+
+<h1> Name: {{ article.EmployeeFirstName }}</h1>
+<h1> Last name: {{ article.EmployeeLastName }}</h1>
+<h1> Born Date: {{ article.EmployeeBornDate }}</h1>
+<h1> Phone number: {{ article.EmployeePhoneNumber }}</h1>
+<h1> Email: {{ article.EmployeeEmail }}</h1>
+<h1> Car: {{ article.Car}} </h1>
+<h1> Phone: {{ article.Phone}} </h1>
+<h1> Computer: {{ article.Computer}} </h1>
+<hr>
+<a href="/">Go back</a>
+{% endblock %}
